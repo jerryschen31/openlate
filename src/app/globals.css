@@ -1,0 +1,273 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Openlate.app - Category-Defining Dark Mode Theme */
+/* Deep obsidian blacks with electric cyan and amber accents */
+
+:root {
+  /* Daytime Mode (Light) */
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.65 0.19 195); /* Electric Cyan */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.94 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.75 0.15 75); /* Warm Amber */
+  --accent-foreground: oklch(0.145 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.90 0 0);
+  --input: oklch(0.90 0 0);
+  --ring: oklch(0.65 0.19 195);
+  --radius: 0.75rem;
+  
+  /* Custom Openlate colors */
+  --cyan: oklch(0.75 0.18 195);
+  --cyan-glow: oklch(0.80 0.20 195);
+  --amber: oklch(0.80 0.16 75);
+  --amber-glow: oklch(0.85 0.18 75);
+  --success: oklch(0.70 0.18 145);
+  --warning: oklch(0.80 0.16 75);
+  --danger: oklch(0.60 0.22 25);
+  
+  /* Sunset gradient colors */
+  --sunset-purple: oklch(0.45 0.20 300);
+  --sunset-orange: oklch(0.65 0.20 50);
+  
+  --chart-1: oklch(0.65 0.19 195);
+  --chart-2: oklch(0.75 0.15 75);
+  --chart-3: oklch(0.70 0.18 145);
+  --chart-4: oklch(0.60 0.22 25);
+  --chart-5: oklch(0.55 0.18 270);
+}
+
+.dark {
+  /* Vampire Mode - Ultra Premium Dark */
+  --background: oklch(0.10 0.005 270);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.13 0.008 270);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.12 0.008 270);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.75 0.18 195); /* Brighter Cyan for dark mode */
+  --primary-foreground: oklch(0.10 0 0);
+  --secondary: oklch(0.18 0.01 270);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.20 0.01 270);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.80 0.16 75); /* Amber */
+  --accent-foreground: oklch(0.10 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.22 0.01 270);
+  --input: oklch(0.18 0.01 270);
+  --ring: oklch(0.75 0.18 195);
+  
+  /* Enhanced glow effects for dark mode */
+  --cyan: oklch(0.78 0.20 195);
+  --cyan-glow: oklch(0.85 0.22 195);
+  --amber: oklch(0.82 0.18 75);
+  --amber-glow: oklch(0.88 0.20 75);
+  --success: oklch(0.72 0.20 145);
+  --warning: oklch(0.82 0.18 75);
+  --danger: oklch(0.62 0.24 25);
+  
+  --chart-1: oklch(0.75 0.18 195);
+  --chart-2: oklch(0.80 0.16 75);
+  --chart-3: oklch(0.72 0.20 145);
+  --chart-4: oklch(0.62 0.24 25);
+  --chart-5: oklch(0.60 0.20 270);
+}
+
+/* Sunset Mode Theme Override */
+.sunset-mode {
+  --background: oklch(0.18 0.04 300);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.20 0.05 295);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.18 0.05 300);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.75 0.20 50); /* Sunset Orange */
+  --primary-foreground: oklch(0.10 0 0);
+  --secondary: oklch(0.25 0.06 295);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.22 0.05 298);
+  --muted-foreground: oklch(0.70 0.02 300);
+  --accent: oklch(0.70 0.18 45);
+  --accent-foreground: oklch(0.10 0 0);
+  --border: oklch(0.28 0.06 295);
+  --input: oklch(0.22 0.05 298);
+  --ring: oklch(0.75 0.20 50);
+  
+  --cyan: oklch(0.75 0.18 195);
+  --amber: oklch(0.80 0.20 50);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Openlate custom colors */
+  --color-cyan: var(--cyan);
+  --color-cyan-glow: var(--cyan-glow);
+  --color-amber: var(--amber);
+  --color-amber-glow: var(--amber-glow);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-sunset-purple: var(--sunset-purple);
+  --color-sunset-orange: var(--sunset-orange);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: oklch(0.12 0.005 270);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: oklch(0.25 0.01 270);
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.35 0.01 270);
+}
+
+/* Sunset gradient background */
+.sunset-gradient {
+  background: linear-gradient(
+    135deg,
+    oklch(0.35 0.15 300) 0%,
+    oklch(0.30 0.18 320) 25%,
+    oklch(0.35 0.20 350) 50%,
+    oklch(0.45 0.22 30) 75%,
+    oklch(0.55 0.20 50) 100%
+  );
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px oklch(0.75 0.18 195 / 0.3);
+}
+
+.glow-amber {
+  box-shadow: 0 0 20px oklch(0.80 0.16 75 / 0.3);
+}
+
+/* Touch targets */
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Safe area padding for mobile */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Hide horizontal scrollbar for mood bar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Leaflet map customizations */
+.leaflet-container {
+  background: oklch(0.12 0.008 270) !important;
+  font-family: inherit;
+  z-index: 1;
+}
+
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-control {
+  z-index: 10;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--card);
+  color: var(--card-foreground);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-popup-tip {
+  background: var(--card);
+}
+
+.leaflet-popup-close-button {
+  color: var(--muted-foreground) !important;
+}
+
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Attribution styling */
+.leaflet-control-attribution {
+  background: var(--background) !important;
+  color: var(--muted-foreground) !important;
+  font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+  color: var(--primary) !important;
+}
